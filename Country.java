@@ -12,17 +12,24 @@ public class Country{
 
     private void scanInfo(){
     String s = findColor();
+    if(s.equals("not found")){
+	// throw exception
+    }
     data=s.split(",");
     }
 
     private String findColor(){
-    try{
         Scanner in = new Scanner(new File(filename));
 	    while(in.hasNext()){
-		Scanner line = new Scanner(in.nextLine()):
-			    while(line.hasNext()){
-					String current = line.next();
-					       	       if(line.contains(color)){
+		String line = new Scanner(in.nextLine());
+		    if(line.contains(color)){
+			return current;
+		    }
+	    }
+	    return "not found";	    
+    }
+
+}
 								   
 										}
 										
