@@ -72,17 +72,35 @@ public class Country{
         }
 	return data;
     }
+
+    public int getColor(){
+	return color;
+    }
+    
+    private String calcValue(int thing){
+	if(thing == 0)
+	    return Name();
+	if(thing == 2)
+	    return Population() + "";
+	if(thing == 3)
+	    return MalariaDeath() + "";
+	if(thing == 4)
+	    return GDP() + "";
+	if(thing == 5)
+	    return LifeExpectancy() + "";
+	else
+	    return "Invalid input";
+    }
     
     public static  void main(String[]args){
 	Country x = new Country(330066);
-	System.out.println(x.Name());
+	System.out.println(x.calcValue(0));
 	System.out.println(x.Population());
 	System.out.println(x.MalariaDeath());
 	System.out.println(x.GDP());
 	System.out.println(x.LifeExpectancy());
 	System.out.println(Arrays.toString(data));
     }
-    
 }
 										
 
