@@ -18,7 +18,4 @@ public class Maps{
 	    countries.add(current);
 	}
     }
-    
-	    
-  
 }
