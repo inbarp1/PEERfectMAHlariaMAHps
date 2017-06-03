@@ -1,21 +1,35 @@
 import java.util.*;
+import java.io.*;
+
 public class Maps{
-    Country current;
-    ArrayList<Country> countries;
+    public static Country current;
+    public static ArrayList<Country> countries;
+    public static String filename;
+    
     public Maps(){
-	filename=info.txt;
-	countries = new ArrayList<Country>;
+        filename = "info.txt";
+	countries = new ArrayList<Country>();
 	createCountry();
     }
     
     public void createCountry(){
-	String[]data = new String[10];
-	Scanner in = new Scanner(new File(filename));
-	while(in.hasNext()){
-	    String line = new Scanner(in.nextLine());
-	    data=s.split(",");
-	    current = new Country(data[1]);
-	    countries.add(current);
-	}
+	String line = "";
+        String csvSplitBy = ",";
+	
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+	    while ((line = br.readLine()) != null) {
+		String[]country = line.split(csvSplitBy);
+		current = new Country(country[1]);
+		countries.add(current);
+	    }
+       	}
+	catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[]args){
+	Maps x = new Maps();
+	System.out.println(Arrays.toString(countries.toArray()));
     }
 }
