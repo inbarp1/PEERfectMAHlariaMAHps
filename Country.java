@@ -74,103 +74,103 @@ public class Country{
     }
     private String colorVal(int thing){
 	if(thing == 2)
-	    return "" + popVal();
+	    return popVal();
 	if(thing == 3)
-	    return "" + malVal()
+	    return malVal();
 	if(thing == 4)
-	    return "" + monVal();
+	    return monVal();
 	if(thing == 5)
-	    return "" + lifeVal();
+	    return lifeVal();
 	else	   
 	    return "Invalid input";
     }
-
+    
     private String popVal(){
 	if(this.Population()> 1000000){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.Population()> 5000000){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.Population()> 10000000){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.Population()> 50000000){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
         else{
-	    return // shade of red;
-		}
+	    return ""; // shade of red;
+	}
     }
     
     private String malVal(){
 	if(this.MalariaDeath()> 60){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.MalariaDeath()>50){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.MalariaDeath()> 40){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.MalariaDeath()> 30){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.MalariaDeath()> 20){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.MalariaDeath()> 10){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.MalariaDeath()> 0){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
         else{
-	    return // shade of red;
-		}
+	    return ""; // shade of red;
+	}
     }
 
     
     private String monVal(){
 	if(this.GDP()> 100){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.GDP()> 50){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.GDP()>10){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.GDP()> 5){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
 	if(this.GDP()> 0){
-	    return //shade of red;
-		}
+	    return ""; //shade of red;
+	}
         else{
-	    return // shade of red;
-		}
+	    return ""; // shade of red;
+	}
     }
     
     private String lifeVal(){
-	if(this.LifeExpectancy()> 70){
-	    return //shade of red;
-		}
-	if(this.LifeExpectancy()> 65){
-	    return //shade of red;
-		}
-	if(this.LifeExpectancy()60){
-	    return //shade of red;
-		}
-	if(this.LifeExpectancy()> 55){
-	    return //shade of red;
-		}
-	if(this.LifeExpectancy()> 50){
-	    return //shade of red;
-		}
+	if(this.LifeExpectancy() > 70){
+	    return ""; //shade of red;
+	}
+	else if(this.LifeExpectancy() > 65){
+	    return ""; //shade of red;
+	}
+	else if(this.LifeExpectancy() > 60){
+	    return ""; //shade of red;
+	}
+	else if(this.LifeExpectancy() > 55){
+	    return ""; //shade of red;
+	}
+	else if(this.LifeExpectancy()> 50){
+	    return ""; //shade of red;
+	}
         else{
-	    return // shade of red;
-		}
+	    return ""; // shade of red;
+	}
     }
     
     private String calcValue(int thing){
