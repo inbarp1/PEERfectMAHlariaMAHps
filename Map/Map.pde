@@ -4,29 +4,28 @@ void setup(){
   size(693, 627);
   img = loadImage("Africa.jpg");
   img.resize(693,627);
-  image(img, 0, 0);
+    image(img, 0, 0);
+
 }
 
 void draw() {
   loadPixels();
-  img.loadPixels();
-  for (int y = 0; y < height; y++) {
-    for (int x = 0; x < width; x++) {
-      int loc = x + y*width;
-      
-      // The functions red(), green(), and blue() pull out the 3 color components from a pixel.
-      float r = red(img.pixels[loc]);
-      float g = green(img.pixels[loc]);
-      float b = blue(img.pixels[loc]);
-      
-      // Image Processing would go here
-      // If we were to change the RGB values, we would do it here, 
-      // before setting the pixel in the display window.
-      
-      // Set the display pixel to the image pixel
-      pixels[loc] =  color(r,g,b);          
-    }
-  
- 
-  }
 }
+
+ void mouseClicked() {
+  
+   color c = pixels[mouseY*width+mouseX];
+   System.out.println(c);
+   if (){
+       for (int i = 0; i < width*height; i++) {
+         if(pixels[i]== #0000FF){
+           pixels[i]=#ff0000;
+         }
+       }
+   }
+   updatePixels();
+ 
+     
+  println("Click happened");
+     }
+     
