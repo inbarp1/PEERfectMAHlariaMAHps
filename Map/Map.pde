@@ -1,3 +1,4 @@
+
 PImage img;
 Country curr; 
 void setup(){
@@ -7,24 +8,30 @@ void setup(){
 
 }
 
+void mouseClicked() {  
+  color c = pixels[mouseY*width+mouseX];
+  println((hex(c)+"").substring(2));
+  curr = new Country(""+hex(c).substring(2));
+  //System.out.println(curr.getColor());
+  println("Click happened");
+  for (int i = 0; i < width*height; i++) {
+         if(pixels[i] + ""== curr.getColor()){
+           pixels[i]=#ff0000;
+         }
+     }
+     
+  }
+     
+ 
 void draw() {
   loadPixels();
-  if (mousePressed== true ){
-    System.out.println(curr.getColor());
+/*if (mousePressed == true ){
+   // System.out.println(curr.getColor());
     for (int i = 0; i < width*height; i++) {
          if(pixels[i] + ""== curr.getColor()){
            pixels[i]=#ff0000;
          }
        }
-  }
+  }*/
    updatePixels();
 }
-
-void mouseClicked() {  
-  color c = pixels[mouseY*width+mouseX];
-  curr = new Country(""+c);
-   
- 
-     
-  println("Click happened");
-     }

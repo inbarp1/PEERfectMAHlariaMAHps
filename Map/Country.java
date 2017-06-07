@@ -7,7 +7,7 @@ public class Country{
     public static String filename; 
 
     public Country(String colour){
-  filename = "info.txt";
+  filename = "/home/students/2018/mahesh.saha/PEERfectMAHlariaMAHps/Map/data/info.txt"; 
   color = colour;
   scanInfo();
     }
