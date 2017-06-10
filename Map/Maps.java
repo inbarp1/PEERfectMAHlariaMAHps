@@ -7,7 +7,7 @@ public class Maps{
     public static String filename;
     
     public Maps(){
-        filename = "info.txt";
+        filename = "C:\\Users\\THOR\\Documents\\GitHub\\PEERfectMAHlariaMAHps\\Map\\data\\info.txt";
 	countries = new ArrayList<Country>();
 	createCountry();
     }
@@ -27,9 +27,8 @@ public class Maps{
             e.printStackTrace();
         }
     }
-
-    public static void main(String[]args){
-	Maps x = new Maps();
-	System.out.println(Arrays.toString(countries.toArray()));
+    
+    public ArrayList<Country> getCountries(){
+      return countries;
     }
 }

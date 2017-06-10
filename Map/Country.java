@@ -7,13 +7,13 @@ public class Country{
     public static String filename; 
 
     public Country(String colour){
-  filename = "/home/students/2018/mahesh.saha/PEERfectMAHlariaMAHps/Map/data/info.txt"; 
-  color = colour;
-  scanInfo();
+      filename = "C:\\Users\\THOR\\Documents\\GitHub\\PEERfectMAHlariaMAHps\\Map\\data\\info.txt"; 
+      color = colour;
+      scanInfo();
     }
     
     private void scanInfo(){
-  String s = findColor();
+      String s = findColor();
   if(s.equals("Country not found")){
       return;
   }
@@ -50,7 +50,7 @@ public class Country{
   return Double.parseDouble(data[5]);
     }
     
-    private String findColor(){
+  private String findColor(){
   String line = "";
         String csvSplitBy = ",";
   String data = "Country Not Found";
@@ -68,6 +68,7 @@ public class Country{
         }
   return data;
     }
+   
 
     public String getColor(){
   return color;
@@ -187,17 +188,5 @@ public class Country{
   else
       return "Invalid input";
     }
-    
-    public static  void main(String[]args){
-  Country x = new Country("330066");
-  System.out.println(x.calcValue(0));
-  System.out.println(x.Population());
-  System.out.println(x.MalariaDeath());
-  System.out.println(x.GDP());
-  System.out.println(x.LifeExpectancy());
-  System.out.println(Arrays.toString(data));
-    }
-}                
-
-
-                    
+          
+}         
