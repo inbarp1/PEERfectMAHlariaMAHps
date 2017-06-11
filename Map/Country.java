@@ -78,34 +78,33 @@ public class Country{
       return color;
     }
     public int colorVal(int thing){
-  //if(thing == 2)
-      //return popVal();
+    if(thing == 2)
+      return popVal();
   if(thing == 3)
       return malVal();
-  //f(thing == 4)
-      //return monVal();
-  //if(thing == 5)
-     // return lifeVal();
-   
-      return -1;
+  if(thing == 4)
+      return monVal();
+    if(thing == 5)
+     return lifeVal();
+   return -1;
     
     }
-    private String popVal(){
+    private int popVal(){
   if(this.Population()> 1000000){
-      return "#ffe5e5"; //shade of red;
+      return 5; //shade of red;
   }
   if(this.Population()> 5000000){
-      return "#ff9999"; //shade of red;
+      return 4; //shade of red;
   }
   if(this.Population()> 10000000){
-      return "#ff6666"; //shade of red;
+      return 3; //shade of red;
   }
   if(this.Population()> 50000000){
-      return "#ff3232";
+      return 2;
       //shade of red;
   }
         else{
-      return "#ff0000";// shade of red;
+      return 1;
       
   }
     }
@@ -138,45 +137,45 @@ public class Country{
     }
 
     
-    private String monVal(){
+    private int monVal(){
   if(this.GDP()> 100){
-      return ""; //shade of red;
+      return 5;
   }
   if(this.GDP()> 50){
-      return ""; //shade of red;
+      return 4; //shade of red;
   }
   if(this.GDP()>10){
-      return ""; //shade of red;
+      return 3; //shade of red;
   }
   if(this.GDP()> 5){
-      return ""; //shade of red;
+      return 2;
   }
   if(this.GDP()> 0){
-      return ""; //shade of red;
+      return 1;
   }
         else{
-      return ""; // shade of red;
+      return 0;
   }
     }
     
-    private String lifeVal(){
+    private int lifeVal(){
   if(this.LifeExpectancy() > 70){
-      return ""; //shade of red;
+      return 5;
   }
   else if(this.LifeExpectancy() > 65){
-      return ""; //shade of red;
+      return 4;
   }
-  else if(this.LifeExpectancy() > 60){
-      return ""; //shade of red;
+  if(this.LifeExpectancy() > 60){
+      return 3;
   }
-  else if(this.LifeExpectancy() > 55){
-      return ""; //shade of red;
+  if(this.LifeExpectancy() > 55){
+      return 2;
   }
-  else if(this.LifeExpectancy()> 50){
-      return ""; //shade of red;
+  if(this.LifeExpectancy()> 50){
+      return 1 ;//shade of red;
   }
         else{
-      return ""; // shade of red;
+      return 0;
   }
     }
     
