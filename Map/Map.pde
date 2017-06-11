@@ -12,25 +12,32 @@ void setup(){
 }
 
 void mouseClicked() {  
-  int tempX = mouseX;
-  int tempY = mouseY;
+  String[] x = new String[100];
   //println(hex(get(tempX,tempY)));
+  for(int i= 0; i<countries.size(); i++){
+    Country country = countries.get(i);
+    x[i] = ("FF" + country.colorVal(2).substring(3));
+  }
   for(int j= 0; j<countries.size(); j++){
+    int tempX = mouseX;
+    int tempY = mouseY;
     //println(countries);
     Country country = countries.get(j);
     //println(country);
-    String now = country.getColor(); 
-    String next = country.colorVal(2);
-    //println(next);
-    next = "FF"+ next.substring(3);
+    //String now = country.getColor(); 
+    //String next = country.colorVal(2);
+    ////println(next);
+    //next = "FF"+ next.substring(3);
     //System.out.println(next);
     
-    if(((""+hex(get(tempX,tempY))).substring(2)).equals(now)){
+    if(((""+hex(get(tempX,tempY))).substring(2)).equals(country.getColor())){
        println("here");
-       for(int i = 0; i < width*height; i ++)
-       if(pixels[i] == get(tempX,tempY)){
-         pixels[i] = unhex(next);
-         println(pixels[i]);
+       //println(get(tempX,tempY));
+      // println(next);
+       for(int k = 0; k < width*height; k ++)
+       if(pixels[k] == get(tempX,tempY)){
+         pixels[k] = unhex(x[j]);
+         //println(pixels[i]);
          
        }
        //set(tempX,tempY,unhex(next));
