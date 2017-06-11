@@ -4,18 +4,21 @@ import java.io.*;
 public class Maps{
     public static Country current;
     public static ArrayList<Country> countries;
-    public static String filename;
+    public static String filenameMahesh;
+    public static String filenameInbar;
     
     public Maps(){
-        filename = "/Users/inbarpeer/desktop/PEERfectMAHlariaMAHps/Map/data/info.txt";
+      filenameInbar = "/Users/inbarpeer/desktop/PEERfectMAHlariaMAHps/Map/data/info.txt";
+      filenameMahesh = "C:\\Users\\THOR\\Documents\\GitHub\\PEERfectMAHlariaMAHps\\Map\\data\\info.txt";
 	    countries = new ArrayList<Country>();
-	  createCountry();
+	    createCountry();
+//System.out.println(countries);
     }
     
     public void createCountry(){
 	String line = "";
         String csvSplitBy = ",";
-    try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(filenameMahesh))) {
 	  while ((line = br.readLine()) != null) {
 		String[]country = line.split(csvSplitBy);
 		current = new Country(country[1]);
