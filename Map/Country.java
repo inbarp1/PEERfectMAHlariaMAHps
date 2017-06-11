@@ -73,7 +73,7 @@ public class Country{
     public String getColor(){
   return color;
     }
-    private String colorVal(int thing){
+    public String colorVal(int thing){
   if(thing == 2)
       return popVal();
   if(thing == 3)
@@ -88,19 +88,20 @@ public class Country{
     
     private String popVal(){
   if(this.Population()> 1000000){
-      return ""; //shade of red;
+      return "#ffe5e5"; //shade of red;
   }
   if(this.Population()> 5000000){
-      return ""; //shade of red;
+      return "#ff9999"; //shade of red;
   }
   if(this.Population()> 10000000){
-      return ""; //shade of red;
+      return "#ff6666"; //shade of red;
   }
   if(this.Population()> 50000000){
-      return ""; //shade of red;
+      return "##ff3232";
+      //shade of red;
   }
         else{
-      return ""; // shade of red;
+      return "#ff0000"; // shade of red;
   }
     }
     

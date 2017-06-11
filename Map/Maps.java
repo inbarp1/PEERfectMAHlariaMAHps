@@ -7,17 +7,16 @@ public class Maps{
     public static String filename;
     
     public Maps(){
-        filename = "C:\\Users\\THOR\\Documents\\GitHub\\PEERfectMAHlariaMAHps\\Map\\data\\info.txt";
-	countries = new ArrayList<Country>();
-	createCountry();
+        filename = "/Users/inbarpeer/desktop/PEERfectMAHlariaMAHps/Map/data/info.txt";
+	    countries = new ArrayList<Country>();
+	  createCountry();
     }
     
     public void createCountry(){
 	String line = "";
         String csvSplitBy = ",";
-	
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-	    while ((line = br.readLine()) != null) {
+    try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+	  while ((line = br.readLine()) != null) {
 		String[]country = line.split(csvSplitBy);
 		current = new Country(country[1]);
 		countries.add(current);

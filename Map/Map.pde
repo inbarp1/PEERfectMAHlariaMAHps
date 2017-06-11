@@ -7,36 +7,29 @@ void setup(){
   image(img, 0, 0);
   Maps x = new Maps();
   countries = x.getCountries();
+  //println(countries); 
   
 }
 
 void mouseClicked() {  
-  color c = pixels[mouseY*width+mouseX];
-  //println((hex(c)+"").substring(2));
-  //curr = new Country(""+hex(c).substring(2));
-  //println(curr.getColor());
-  println("Click happened");
-  
-  for (int i = 0; i < width*height; i++) {
-    int j = 0;
-    while (j < countries.size()){
-        //println(hex(pixels[i]));
-        if((""+hex(pixels[i]).substring(2)) == countries.get(j).getColor()){
-           pixels[i]=#ff0000;
-         }
-     }
+  for(int j= 0; j<countries.size(); j++){
+    Country country = countries.get(j);
+    String now = country.getColor(); 
+    String  next = country.colorVal(2);
+    next =  "FF"+ next.substring(3);
+    for(int i = 0; i< width*height; i++){
+      if(""+hex(pixels[i])== now){
+        println("here");
+        pixels[i]= unhex(next);
+      }
+     
+    }
+    //println(now);
+    //println(next);
+    updatePixels();
   }
 }
   
 void draw() {
   loadPixels();
-/*if (mousePressed == true ){
-   // System.out.println(curr.getColor());
-    for (int i = 0; i < width*height; i++) {
-         if(pixels[i] + ""== curr.getColor()){
-           pixels[i]=#ff0000;
-         }
-       }
-  }*/
-   updatePixels();
 }
