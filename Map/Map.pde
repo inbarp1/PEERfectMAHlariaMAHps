@@ -32,21 +32,21 @@ void mouseClicked() {
     //System.out.println(next);
     
     if(((""+hex(get(tempX,tempY))).substring(2)).equals(country.getColor())){
-       println("here");
+      //println("here");
        //println(get(tempX,tempY));
       // println(next);
+      //println(unhex(x[j]));
        for(int k = 0; k < width*height; k ++)
        if(pixels[k] == get(tempX,tempY)){
          //println(pixels[k]);
          pixels[k] = unhex(x[j]);
+         //println("changed pixels");
          updatePixels();
-         println("changed pixels");
          //println(pixels[k]);
          
        }
        //set(tempX,tempY,unhex(next));
     }
-    updatePixels();
     }
   }
 
