@@ -2,12 +2,14 @@ import java.util.*;
 import java.io.*;
 
 public class Country{
-    public static String color;
-    public static String[] data;
-    public static String filename; 
+    public String color;
+    public String[] data;
+    public String filenameInbar; 
+    public String filenameMahesh;
 
     public Country(String colour){
-      filename = "C:\\Users\\THOR\\Documents\\GitHub\\PEERfectMAHlariaMAHps\\Map\\data\\info.txt"; 
+      filenameInbar = "/Users/inbarpeer/desktop/PEERfectMAHlariaMAHps/Map/data/info.txt";
+      filenameMahesh = "C:\\Users\\THOR\\Documents\\GitHub\\PEERfectMAHlariaMAHps\\Map\\data\\info.txt"; 
       color = colour;
       scanInfo();
     }
@@ -20,42 +22,44 @@ public class Country{
   data=s.split(",");
     }
 
-    private String Name(){
+    public String Name(){
   if(data.length < 6)
       return "No data";
   return data[0];
     }
     
-    private int Population(){
+    public int Population(){
   if(data.length < 6)
       return 0;
+      
+  //System.out.println(Arrays.toString(data));
   return Integer.parseInt(data[2]);
     }
 
-    private int MalariaDeath(){
+    public int MalariaDeath(){
   if(data.length < 6)
       return 0;
   return Integer.parseInt(data[3]);
     }
 
-    private Double GDP(){
+    public Double GDP(){
   if(data.length < 6)
       return 0.0;
   return Double.parseDouble(data[4]);
     }
 
-    private Double LifeExpectancy(){
+    public Double LifeExpectancy(){
   if(data.length < 6)
       return 0.0;
   return Double.parseDouble(data[5]);
     }
     
-  private String findColor(){
+  public String findColor(){
   String line = "";
         String csvSplitBy = ",";
   String data = "Country Not Found";
   
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filenameMahesh))) {
       while ((line = br.readLine()) != null) {
     String[] country = line.split(csvSplitBy);
     if(country[1].equals(""+color)){
@@ -71,7 +75,7 @@ public class Country{
    
 
     public String getColor(){
-  return color;
+      return color;
     }
     public String colorVal(int thing){
   if(thing == 2)
@@ -189,5 +193,8 @@ public class Country{
   else
       return "Invalid input";
     }
-          
+    
+  public String toString(){
+    return Name();
+  }
 }         
