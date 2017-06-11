@@ -77,19 +77,19 @@ public class Country{
     public String getColor(){
       return color;
     }
-    public String colorVal(int thing){
-  if(thing == 2)
-      return popVal();
+    public int colorVal(int thing){
+  //if(thing == 2)
+      //return popVal();
   if(thing == 3)
       return malVal();
-  if(thing == 4)
-      return monVal();
-  if(thing == 5)
-      return lifeVal();
-  else     
-      return "Invalid input";
-    }
+  //f(thing == 4)
+      //return monVal();
+  //if(thing == 5)
+     // return lifeVal();
+   
+      return -1;
     
+    }
     private String popVal(){
   if(this.Population()> 1000000){
       return "#ffe5e5"; //shade of red;
@@ -110,31 +110,31 @@ public class Country{
   }
     }
     
-    private String malVal(){
+    private int malVal(){
   if(this.MalariaDeath()> 60){
-      return "660000"; //shade of red;
+      return 7; //shade of red;
   }
   if(this.MalariaDeath()>50){
-      return "CC0000"; //shade of red;
+      return 6; //shade of red;
   }
   if(this.MalariaDeath()> 40){
-      return "FF1919"; //shade of red;
+      return 5; //shade of red;
   }
   if(this.MalariaDeath()> 30){
-      return "FF6666"; //shade of red;
+      return 4; //shade of red;
   }
   if(this.MalariaDeath()> 20){
-      return "FF9999"; //shade of red;
+      return 3; //shade of red;
   }
   if(this.MalariaDeath()> 10){
-      return "FFcccc"; //shade of red;
+      return 2; //shade of red;
   }
   if(this.MalariaDeath()> 0){
-      return "FFe5e5"; //shade of red;
+      return 1; //shade of red;
   }
-        else{
-      return "FFF000"; // shade of red;
-  }
+  return 0;
+          
+    
     }
 
     
