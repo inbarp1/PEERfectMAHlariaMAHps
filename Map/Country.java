@@ -39,7 +39,7 @@ public class Country{
     public int MalariaDeath(){
   if(data.length < 6)
       return 0;
-  return Integer.parseInt(data[3]);
+    return (int)Double.parseDouble(data[3]);
     }
 
     public Double GDP(){
@@ -101,38 +101,39 @@ public class Country{
       return "#ff6666"; //shade of red;
   }
   if(this.Population()> 50000000){
-      return "##ff3232";
+      return "#ff3232";
       //shade of red;
   }
         else{
-      return "#ff0000"; // shade of red;
+      return "#ff0000";// shade of red;
+      
   }
     }
     
     private String malVal(){
   if(this.MalariaDeath()> 60){
-      return ""; //shade of red;
+      return "660000"; //shade of red;
   }
   if(this.MalariaDeath()>50){
-      return ""; //shade of red;
+      return "CC0000"; //shade of red;
   }
   if(this.MalariaDeath()> 40){
-      return ""; //shade of red;
+      return "FF1919"; //shade of red;
   }
   if(this.MalariaDeath()> 30){
-      return ""; //shade of red;
+      return "FF6666"; //shade of red;
   }
   if(this.MalariaDeath()> 20){
-      return ""; //shade of red;
+      return "FF9999"; //shade of red;
   }
   if(this.MalariaDeath()> 10){
-      return ""; //shade of red;
+      return "FFcccc"; //shade of red;
   }
   if(this.MalariaDeath()> 0){
-      return ""; //shade of red;
+      return "FFe5e5"; //shade of red;
   }
         else{
-      return ""; // shade of red;
+      return "FFF000"; // shade of red;
   }
     }
 
@@ -179,7 +180,7 @@ public class Country{
   }
     }
     
-    private String calcValue(int thing){
+    public String calcValue(int thing){
   if(thing == 0)
       return Name();
   if(thing == 2)

@@ -14,16 +14,17 @@ void setup(){
 void mouseClicked() {  
   String[] x = new String[53];
   //println(hex(get(tempX,tempY)));
-  for(int i= 0; i<countries.size(); i++){
-    Country country = countries.get(i);
-    x[i] = ("FF" + country.colorVal(2).substring(3));
-  }
+  //for(int i= 0; i<countries.size(); i++){
+   // Country country = countries.get(i);
+    //x[i] = ("FF" + country.colorVal(2).substring(3));
+ // }
   //println(x);
   for(int j= 0; j<countries.size(); j++){
     int tempX = mouseX;
     int tempY = mouseY;
     //println(countries);
     Country country = countries.get(j);
+    
     //println(country);
     //String now = country.getColor(); 
     //String next = country.colorVal(2);
@@ -39,14 +40,15 @@ void mouseClicked() {
        for(int k = 0; k < width*height; k ++)
        if(pixels[k] == get(tempX,tempY)){
          //println(pixels[k]);
-         pixels[k] = unhex(x[j]);
+         pixels[k] = unhex(country.colorVal(3));
+         println(country.colorVal(3));
          //println("changed pixels");
-         updatePixels();
          //println(pixels[k]);
          
        }
        //set(tempX,tempY,unhex(next));
     }
+    updatePixels();
     }
   }
 
