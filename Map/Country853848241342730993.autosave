@@ -107,7 +107,7 @@ public class Country{
       return 2;
       //shade of red;
   }
- else{
+  else{
       return 1;
       
   }
