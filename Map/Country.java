@@ -90,6 +90,9 @@ public class Country{
     
     }
     private int popVal(){
+  if(this.Population()> 50000){
+      return 6; //shade of red;
+  }
   if(this.Population()> 1000000){
       return 5; //shade of red;
   }
@@ -97,12 +100,12 @@ public class Country{
       return 4; //shade of red;
   }
   if(this.Population()> 10000000){
-      return 3; //shade of red;
+      return 3;
+      //shade of red;
   }
   if(this.Population()> 50000000){
       return 2;
       //shade of red;
-  }
         else{
       return 1;
       

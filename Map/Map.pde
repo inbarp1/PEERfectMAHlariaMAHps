@@ -75,9 +75,7 @@ void draw() {
   fill(0, 102, 153);
   text("Life", rect5X+15, rect5Y+rectSize/2);
   textSize(12);
-  text("Expectancy", rect5X, rect5Y+rectSize/2 + 14);
- 
-  
+  text("Expectancy", rect5X, rect5Y+rectSize/2 + 14); 
  
 }
 
@@ -114,18 +112,17 @@ void mouseClicked() {
 void changeColors(int n){
   reload();
   loadPixels();
-  String[] x = new String[53];
   //println(hex(get(tempX,tempY)));
   //for(int i= 0; i<countries.size(); i++){
    // Country country = countries.get(i);
     //x[i] = ("FF" + country.colorVal(2).substring(3));
  // }
   //println(x);
+  println(countries);
   for(int j= 0; j<countries.size(); j++){
-    //int tempX = mouseX;
-    //int tempY = mouseY;
-    //println(countries);
+    
     Country country = countries.get(j);
+      println(country.getColor());
     //println(country.calcValue(0));
     //if(((""+hex(get(tempX,tempY))).substring(2)).equals(country.getColor())){
        for(int k = 0; k < width*height; k ++)
@@ -177,11 +174,11 @@ color toRGB(int i){
      return c;
   }
   if(i==7){
-     c = color(14,0,0);
+     c = color(53,0,0);
      return c;
   }
   else{
-  c = color(14,0,0);
+  c = color(28,0,0);
   return c;
   }
 } 
