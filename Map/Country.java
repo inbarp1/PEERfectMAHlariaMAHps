@@ -139,10 +139,10 @@ public class Country{
     
     private int malVal(){
   if(this.MalariaDeath()> 60){
-      return 7; //shade of red;
+      return 9; //shade of red;
   }
   if(this.MalariaDeath()>50){
-      return 6; //shade of red;
+      return 8; //shade of red;
   }
   if(this.MalariaDeath()> 40){
       return 5; //shade of red;
@@ -167,10 +167,10 @@ public class Country{
     
     private int monVal(){
   if(this.GDP()> 100){
-      return 5;
+      return 8;
   }
   if(this.GDP()> 50){
-      return 4; //shade of red;
+      return 7; //shade of red;
   }
   if(this.GDP()>10){
       return 3; //shade of red;
@@ -188,19 +188,22 @@ public class Country{
     
     private int lifeVal(){
   if(this.LifeExpectancy() > 70){
-      return 5;
+      return 9;
   }
   else if(this.LifeExpectancy() > 65){
-      return 4;
+      return 8;
   }
   if(this.LifeExpectancy() > 60){
-      return 3;
+      return 4;
   }
   if(this.LifeExpectancy() > 55){
-      return 2;
+      return 3;
   }
   if(this.LifeExpectancy()> 50){
-      return 1 ;//shade of red;
+      return 2 ;//shade of red;
+  }
+  if(this.LifeExpectancy()>40){
+    return 1;
   }
         else{
       return 0;

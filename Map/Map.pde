@@ -129,7 +129,7 @@ void changeColors(int n){
        if((""+hex(pixels[k])).substring(2).equals(country.getColor())){
          //println(pixels[k]);
          //println(country.colorVal(3));
-         println(country.colorVal(n));
+         //println(country.colorVal(n));
          pixels[k] = toRGB(country.colorVal(n));
          //println(country.colorVal(3));
          //println("changed pixels");
