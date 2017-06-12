@@ -1,5 +1,6 @@
 
 PImage img;
+PWindow win;
 int rect1X, rect1Y, rect2X, rect2Y, rect3X, rect3Y,rect4X, rect4Y,rect5X, rect5Y;   
 int rectSize = 70; 
 boolean rect1Over = false;
@@ -11,8 +12,10 @@ color rectColor;
 color rectHighlight;
 int number =0;
 ArrayList<Country> countries;
+void settings(){
+  size(841,960);
+}
 void setup(){
-  size(841, 960);
   img = loadImage("Africa1.png");
   image(img, 0, 0);
   Maps x = new Maps();
@@ -44,11 +47,6 @@ void draw() {
   } else {
     fill(rectColor);
   }
-  color pink = color(255,38,191);
-  color purple = color(192,16,246);
-  color yellow = color(255,255,0);
-  color blue = color(0,77,255);
-  color green = color(131,235,111);
   textSize(16);
   stroke(255);
   fill(0); 
@@ -87,6 +85,7 @@ void mouseClicked() {
    println("reloaded");
   }  
   else if(rect2Over){
+    win = new PWindow(2);
     println("pop");
     changeColors(2);
     rect2Over = false;
