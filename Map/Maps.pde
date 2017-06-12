@@ -10,8 +10,8 @@ public class Maps{
     
     public Maps(){
       lines = loadStrings("info.txt");  
-	    countries = new ArrayList<Country>();
-	    createCountry();
+      countries = new ArrayList<Country>();
+      createCountry();
 //System.out.println(countries);
     }
     
@@ -22,7 +22,7 @@ public class Maps{
         countries.add(new Country(country[1]));
       }
     }
-	
+  
     
     public ArrayList<Country> getCountries(){
       return countries;

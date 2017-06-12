@@ -29,8 +29,6 @@ public String[] lines;
     public int Population(){
   if(data.length < 6)
       return 0;
-      
-  //System.out.println(Arrays.toString(data));
   return Integer.parseInt(data[2]);
     }
 

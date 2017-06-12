@@ -1,24 +1,24 @@
 class Key extends PApplet {
   int n;
-  Table table;
-  String[] stuff;
+  Country current;
   Key(int num) {
     super();
     n= num;
     PApplet.runSketch(new String[] {this.getClass().getSimpleName()}, this);
   }
+  Key(int num, Country c){
+    super();
+    n= num;
+    PApplet.runSketch(new String[] {this.getClass().getSimpleName()}, this);
+    current = c;
+  }
  void setup(){
 }
 void settings(){
   size(800,800);
-}
-void createTable(){
-  table = loadTable("info.txt");
+
 }
 void draw(){
-  if (n==1){
-    createTable();
-  }
   if(n==2){
     textSize(25);
     fill(color(90,15,17));
@@ -152,5 +152,26 @@ void draw(){
     text( "No data", 80, 400);
     text( "Average Life Expectancy (years)", 10, 470);
   }
+  if (n==6){
+    //surface.setSize(900,900);
+    frameRate(.2);
+    background(random(225),random(225),random(225));
+    //surface.setSize(800,800);
+    PFont Font1 = createFont("Arial Bold", 45);  
+    PFont Font2 = createFont("Arial Bold", 35);
+    PFont Font3 = createFont("Bitstream Charter Bold", 35);
+    textFont(Font1);
+    text("Displaying data for: " + current.Name(), 10, 50);
+    textFont(Font2);
+    text("Population (2014) = " + current.Population(), 10, 100);
+    textFont(Font2);
+    text("Rate of Malaria Death per 100,000 (2014) = " + current.MalariaDeath(), 10, 150);
+    textFont(Font2);
+    text("Global Domestic Product: GDP (2014) = " + current.GDP(), 10, 200);
+    textFont(Font2);
+    text("Life Expectancy (2014) = " + current.LifeExpectancy(), 10, 250);
+    
+  }
+    
 }
 }
