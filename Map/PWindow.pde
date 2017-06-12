@@ -51,5 +51,39 @@ void draw(){
     text( "75,000,000<= x > 40,000,000", 80, 610);
     text( "Where x represents the number of people", 10, 700);
   }
-}
+  if(n==3){
+    fill(color(121,11,31));
+    rect(10,10,60,60);
+    fill(0);
+    text( ">60", 10, 10);
+    fill(color(105,13,24));
+    rect(10,80,60,60);
+    fill(0);
+    text( ">50", 10, 80);
+    fill(color(152,8,44));
+    rect(10,150,60,60);
+    fill(0);
+    text( ">40", 10, 150);
+    fill(color(167,6,51));
+    rect(10,220,60,60);
+    fill(0);
+    text( ">30", 10, 220);
+    fill(color(182, 5,57));
+    rect(10,290,60,60);
+    fill(0);
+    text( ">20", 10, 290);
+    fill(color(198, 3, 64));
+    rect(10,360,60,60);
+    fill(0);
+    text( ">10", 10, 360);
+    fill(color(213, 1, 71));
+    rect(10,430,60,60);
+    fill(0);
+    text( ">0", 10, 430);
+  }
+  if(n==4){
+  }
+  if(n==5){
+  }
+  }
 }

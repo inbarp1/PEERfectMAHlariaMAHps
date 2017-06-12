@@ -91,16 +91,19 @@ void mouseClicked() {
     rect2Over = false;
   }
   else if(rect3Over){
+    win = new PWindow(3);
     println("malaria");
     changeColors(3);
     rect3Over = false;
   }
   else if(rect4Over){
+    win = new PWindow(4);
     println("gdp");
     changeColors(4);
     rect4Over = false;
   }
   else if(rect5Over){
+    win = new PWindow(5);
     println("life");
     changeColors(5);
     rect5Over = false;
