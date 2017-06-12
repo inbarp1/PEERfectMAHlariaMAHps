@@ -50,27 +50,28 @@ void draw() {
   color green = color(131,235,111);
   textSize(12);
   stroke(255);
-  fill(pink); 
+  fill(0); 
   rect(rect1X, rect1Y, rectSize, rectSize);
-  fill(0);
+  fill(0, 102, 153);
   text("Clear", rect1X+rectSize/4, rect1Y+rectSize/2);
-  fill(green);
-  rect(rect2X, rect2Y, rectSize, rectSize);
   fill(0);
+  rect(rect2X, rect2Y, rectSize, rectSize);
+  fill(0, 102, 153);
   textSize(8);
   text("Population", rect2X, rect2Y+rectSize/2);
-  fill(purple);
+  fill(0);
   rect(rect3X, rect3Y, rectSize, rectSize);
-  textSize(12);
-  fill(0);
+  textSize(14);
+  fill(0, 102, 153);
   text("Malaria", rect3X, rect3Y+rectSize/2);
-  fill(yellow);
-  rect(rect4X, rect4Y, rectSize, rectSize);
   fill(0);
+  rect(rect4X, rect4Y, rectSize, rectSize);
+  fill(0, 102, 153);
   text("GDP", rect4X+rectSize/4, rect4Y+rectSize/2);
-  fill(blue);
+  fill(0);
   textSize(8);
   rect(rect5X, rect5Y, rectSize, rectSize);fill(0);
+  fill(0, 102, 153);
   text("Life Expectancy", rect5X, rect5Y+rectSize/2);
  
   

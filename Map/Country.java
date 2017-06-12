@@ -59,7 +59,7 @@ public class Country{
         String csvSplitBy = ",";
   String data = "Country Not Found";
   
-        try (BufferedReader br = new BufferedReader(new FileReader(filenameInbar))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filenameMahesh))) {
       while ((line = br.readLine()) != null) {
     String[] country = line.split(csvSplitBy);
     if(country[1].equals(""+color)){

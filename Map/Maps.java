@@ -18,7 +18,7 @@ public class Maps{
     public void createCountry(){
 	String line = "";
         String csvSplitBy = ",";
-    try (BufferedReader br = new BufferedReader(new FileReader(filenameInbar))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(filenameMahesh))) {
 	  while ((line = br.readLine()) != null) {
 		String[]country = line.split(csvSplitBy);
 		current = new Country(country[1]);
