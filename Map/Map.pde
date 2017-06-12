@@ -1,6 +1,6 @@
 
 PImage img;
-PWindow win;
+Key win;
 int circleX,circleY;
 int CircleSize=70;
 int rect1X, rect1Y, rect2X, rect2Y, rect3X, rect3Y,rect4X, rect4Y,rect5X, rect5Y;   
@@ -89,32 +89,32 @@ void mouseClicked() {
   //println(mouseX);
   //println(mouseY);
    if (circleOver) {
-    win = new PWindow(1);
+    win = new Key(1);
   }
   if(rect1Over){
    reload();
    //println("reloaded");
   }  
   else if(rect2Over){
-    win = new PWindow(2);
+    win = new Key(2);
     //println("pop");
     changeColors(2);
     rect2Over = false;
   }
   else if(rect3Over){
-    win = new PWindow(3);
+    win = new Key(3);
     //println("malaria");
     changeColors(3);
     rect3Over = false;
   }
   else if(rect4Over){
-    win = new PWindow(4);
+    win = new Key(4);
     //println("gdp");
     changeColors(4);
     rect4Over = false;
   }
   else if(rect5Over){
-    win = new PWindow(5);
+    win = new Key(5);
     //println("life");
     changeColors(5);
     rect5Over = false;

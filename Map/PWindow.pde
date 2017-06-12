@@ -1,7 +1,8 @@
-class PWindow extends PApplet {
+class Key extends PApplet {
   int n;
   Table table;
-  PWindow(int num) {
+  String[] stuff;
+  Key(int num) {
     super();
     n= num;
     PApplet.runSketch(new String[] {this.getClass().getSimpleName()}, this);
@@ -12,9 +13,7 @@ void settings(){
   size(800,800);
 }
 void createTable(){
-  String[] stuff = loadStrings("info.txt");
   table = loadTable("info.txt");
-  
 }
 void draw(){
   if (n==1){
