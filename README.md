@@ -1,9 +1,9 @@
 ﻿# PEERfectMAHlariaMAHps
 <h2> Mahesh Saha and Inbar Pe'er <br>
 Pd. 06 </h2>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- AP CS Final Project - Africa Map
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<h1>AP CS Final Project - Africa Map</h1>
+
 
  ---------------
 | Instructions: |
@@ -26,7 +26,7 @@ Key to display the current color scheme
 | To be Implemented: |
  --------------------
 Click on countries to display a window with specific stats <br>
-Gradient pattern development based on data criteria
+Gradient pattern development based on data criteria <br>
  ---------
 | DevLog: |
  ---------
