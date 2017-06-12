@@ -2,15 +2,13 @@ import java.util.*;
 import java.io.*;
 
 public class Country{
-    public String color;
+    public String colors;
     public String[] data;
     public String filenameInbar; 
     public String filenameMahesh;
-
+public String[] lines;
     public Country(String colour){
-      filenameInbar = "/Users/inbarpeer/desktop/PEERfectMAHlariaMAHps/Map/data/info.txt";
-      filenameMahesh = "C:\\Users\\THOR\\Documents\\GitHub\\PEERfectMAHlariaMAHps\\Map\\data\\info.txt"; 
-      color = colour;
+      colors = colour;
       scanInfo();
     }
     
@@ -44,38 +42,34 @@ public class Country{
 
     public Double GDP(){
   if(data.length < 6)
-      return 0.0;
+      return 0.0d;
   return Double.parseDouble(data[4]);
     }
 
     public Double LifeExpectancy(){
   if(data.length < 6)
-      return 0.0;
+      return 0.0d;
   return Double.parseDouble(data[5]);
     }
     
   public String findColor(){
   String line = "";
-        String csvSplitBy = ",";
   String data = "Country Not Found";
-  
-        try (BufferedReader br = new BufferedReader(new FileReader(filenameMahesh))) {
-      while ((line = br.readLine()) != null) {
-    String[] country = line.split(csvSplitBy);
-    if(country[1].equals(""+color)){
+  lines = loadStrings("info.txt"); 
+    for (int i = 0; i < lines.length; i ++){
+    String[] country = lines[i].split(",");
+    line = lines[i];
+    if(country[1].equals(""+colors)){
         data = line;
     }
-      }
-  }
-  catch (IOException e) {
-            e.printStackTrace();
-        }
+    }
+  
   return data;
     }
    
 
     public String getColor(){
-      return color;
+      return colors;
     }
     public int colorVal(int thing){
     if(thing == 2)
