@@ -1,6 +1,8 @@
 
 PImage img;
 PWindow win;
+int circleX,circleY;
+int CircleSize=70;
 int rect1X, rect1Y, rect2X, rect2Y, rect3X, rect3Y,rect4X, rect4Y,rect5X, rect5Y;   
 int rectSize = 70; 
 boolean rect1Over = false;
@@ -8,8 +10,9 @@ boolean rect2Over = false;
 boolean rect3Over = false;
 boolean rect4Over = false;
 boolean rect5Over = false;
-color rectColor;
-color rectHighlight;
+boolean circleOver = false;
+color rectColor,circleColor;
+color rectHighlight,circleHighlight;
 int number =0;
 ArrayList<Country> countries;
 void settings(){
@@ -20,6 +23,8 @@ void setup(){
   image(img, 0, 0);
   Maps x = new Maps();
   countries = x.getCountries();
+  circleColor = color(255);
+  circleHighlight = color(204);
   rectColor = color(0);
   rectHighlight = color(51);
   rect1X = 20;
@@ -32,6 +37,8 @@ void setup(){
   rect4Y = 655;
   rect5X =260;
   rect5Y = 655;
+  circleX = 170;
+  circleY = 590;
   //println(countries); 
   
 }
@@ -47,6 +54,7 @@ void draw() {
   } else {
     fill(rectColor);
   }
+  ellipse(circleX, circleY, CircleSize, CircleSize);
   textSize(16);
   stroke(255);
   fill(0); 
@@ -74,12 +82,15 @@ void draw() {
   text("Life", rect5X+15, rect5Y+rectSize/2);
   textSize(12);
   text("Expectancy", rect5X, rect5Y+rectSize/2 + 14); 
- 
+  
 }
 
 void mouseClicked() { 
   //println(mouseX);
   //println(mouseY);
+   if (circleOver) {
+    win = new PWindow(1);
+  }
   if(rect1Over){
    reload();
    //println("reloaded");
@@ -188,12 +199,21 @@ color toRGB(int i){
   }
 } 
 void update(int x, int y) {
+  if(overCircle(circleX, circleY, CircleSize)){
+    circleOver=true;
+    rect1Over = false;
+    rect2Over = false;
+    rect3Over = false;
+    rect4Over = false;
+    rect5Over = false;
+  }
   if ( overRect(rect1X, rect1Y, rectSize, rectSize) ) {
     rect1Over = true;
     rect2Over = false;
     rect3Over = false;
     rect4Over = false;
     rect5Over = false;
+    circleOver=false;
   }
   if ( overRect(rect2X, rect2Y, rectSize, rectSize) ) {
     rect2Over = true;
@@ -201,6 +221,7 @@ void update(int x, int y) {
     rect3Over = false;
     rect4Over = false;
     rect5Over = false;
+    circleOver=false;
   }
    if ( overRect(rect3X, rect3Y, rectSize, rectSize) ) {
     rect3Over = true;
@@ -208,13 +229,16 @@ void update(int x, int y) {
     rect1Over = false;
     rect4Over = false;
     rect5Over = false;
+    circleOver=false;
   }
+  
   if ( overRect(rect4X, rect4Y, rectSize, rectSize) ) {
     rect4Over = true;
     rect2Over = false;
     rect3Over = false;
     rect1Over = false;
     rect5Over = false;
+    circleOver=false;
   }
   
   if ( overRect(rect5X, rect5Y, rectSize, rectSize) ) {
@@ -223,11 +247,21 @@ void update(int x, int y) {
     rect3Over = false;
     rect4Over = false;
     rect1Over = false;
+    circleOver=false;
   }
 }
 boolean overRect(int x, int y, int width, int height)  {
   if (mouseX >= x && mouseX <= x+width && 
       mouseY >= y && mouseY <= y+height) {
+    return true;
+  } else {
+    return false;
+  }
+}
+boolean overCircle(int x, int y, int diameter) {
+  float disX = x - mouseX;
+  float disY = y - mouseY;
+  if (sqrt(sq(disX) + sq(disY)) < diameter/2 ) {
     return true;
   } else {
     return false;

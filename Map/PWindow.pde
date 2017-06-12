@@ -1,5 +1,6 @@
 class PWindow extends PApplet {
   int n;
+  Table table;
   PWindow(int num) {
     super();
     n= num;
@@ -10,7 +11,15 @@ class PWindow extends PApplet {
 void settings(){
   size(800,800);
 }
+void createTable(){
+  String[] stuff = loadStrings("info.txt");
+  table = loadTable("info.txt");
+  
+}
 void draw(){
+  if (n==1){
+    createTable();
+  }
   if(n==2){
     textSize(25);
     fill(color(90,15,17));
