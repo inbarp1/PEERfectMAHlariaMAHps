@@ -4,9 +4,7 @@ import java.io.*;
 public class Country{
     public String colors;
     public String[] data;
-    public String filenameInbar; 
-    public String filenameMahesh;
-public String[] lines;
+    public String[] lines;
     public Country(String colour){
       colors = colour;
       scanInfo();

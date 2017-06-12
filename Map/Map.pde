@@ -28,8 +28,6 @@ void setup(){
   img = loadImage("Africa1.png");
   image(img, 0, 0);
   
-  rectColor = color(0);
-  rectHighlight = color(51);
   rect1X = 20;
   rect1Y = 655;
   rect2X = 80;
@@ -40,24 +38,17 @@ void setup(){
   rect4Y = 655;
   rect5X =260;
   rect5Y = 655;
-  //println(countries); 
-  //popMaker();
-  
-  
 }
+
 void reload(){
-  falsy = true;
+ falsy = true;
  background(255);
  setup();
  rect1Over = false;
 }
+
 void draw() { 
   update(mouseX, mouseY);
-  if (rect1Over) {
-    fill(rectHighlight);
-  } else {
-    fill(rectColor);
-  }
   textSize(16);
   stroke(255);
   fill(0); 
@@ -89,37 +80,30 @@ void draw() {
 }
 
 void mouseClicked() { 
-  //println(mouseX);
-  //println(mouseY);
   if(rect1Over){
     falsy = true;
     reload();
-   //println("reloaded");
   }  
   else if(rect2Over){
     win = new Key(2);
-    //println("pop");
     changeColors(2);
     rect2Over = false;
     falsy = false;
   }
   else if(rect3Over){
     win = new Key(3);
-    //println("malaria");
     changeColors(3);
     rect3Over = false;
     falsy = false;
   }
   else if(rect4Over){
     win = new Key(4);
-    //println("gdp");
     changeColors(4);
     rect4Over = false;
     falsy = false;
   }
   else if(rect5Over){
     win = new Key(5);
-    //println("life");
     changeColors(5);
     rect5Over = false;
     falsy = false;
@@ -127,23 +111,13 @@ void mouseClicked() {
   else if(falsy){
     loadPixels();
     p = hex(pixels[mouseY*width+mouseX]).substring(2);
-    //println(p);
     for (Country c: countries){
-      //println(c.getColor());
       if (c.getColor().equals(p)){
-        //println("running2");
         win = new Key(6,c);
       }
     }
   }
 }
-
-
-  
-
-  
-
-
 
 void hashMapify(){
   set = new HashSet<Integer>();
@@ -173,7 +147,6 @@ void changeColors(int n){
     }
 
 color toRGB(int i){
-  //println(i);
   color c; 
   if(i==0){
      c = color(255, 255, 255);

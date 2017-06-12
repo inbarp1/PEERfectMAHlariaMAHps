@@ -12,8 +12,7 @@ class Key extends PApplet {
     PApplet.runSketch(new String[] {this.getClass().getSimpleName()}, this);
     current = c;
   }
- void setup(){
-}
+
 void settings(){
   size(800,800);
 
@@ -153,13 +152,10 @@ void draw(){
     text( "Average Life Expectancy (years)", 10, 470);
   }
   if (n==6){
-    //surface.setSize(900,900);
     frameRate(.2);
     background(random(225),random(225),random(225));
-    //surface.setSize(800,800);
-    PFont Font1 = createFont("Arial Bold", 45);  
-    PFont Font2 = createFont("Arial Bold", 35);
-    PFont Font3 = createFont("Bitstream Charter Bold", 35);
+    PFont Font1 = createFont("Arial Bold", 32);  
+    PFont Font2 = createFont("Arial Bold", 30);
     textFont(Font1);
     text("Displaying data for: " + current.Name(), 10, 50);
     textFont(Font2);
@@ -170,8 +166,6 @@ void draw(){
     text("Global Domestic Product: GDP (2014) = " + current.GDP(), 10, 200);
     textFont(Font2);
     text("Life Expectancy (2014) = " + current.LifeExpectancy(), 10, 250);
-    
   }
-    
 }
 }
