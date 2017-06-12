@@ -9,24 +9,21 @@ Pd. 06 </h2>
 | Instructions: |
  ---------------
 <b> To Visualize Data </b>
-1) Run Processing on Map.pde <br>
+1) Run Map.pde <br>
 2) Select the data type you would want to see displayed on the map <br>
 3) A window will pop up with a key, you can move it over to the side but DO NOT CLOSE it because it will exit the whole program <br>
 4) Be patient and wait a bit so that the program can run and the map should change colors <br>
 5) You can clear the map and repeat this process with a different data type <br>
+6) Click on a country (only after the filters are cleared) to display the specific statistics for that country! <br>
 
  -------------------
 | Working Features: |
  -------------------
 Changing map color based on clicking buttons<br>
-Creating country datatypes <br>
-Key to display the current color scheme
-
- --------------------
-| To be Implemented: |
- --------------------
+Key to display the current color scheme <br>
 Click on countries to display a window with specific stats <br>
-Gradient pattern development based on data criteria <br>
+
+
  ---------
 | DevLog: |
  ---------
@@ -39,6 +36,8 @@ Gradient pattern development based on data criteria <br>
 -- Buttons implemented to narrow down based on criteria <br>
 -- FINALLY changed the scanner type to match the processing loader <br>
 -- Windows created to represent the Key for each criteria <br>
--- Initial goal of project has been achieved!
+-- Initial goal of project has been achieved! <br>
+-- Added a table that displays the stats for a country when clicked! <br>
+-- Switched algorith to use HashMaps but still very slow. Clearing is constant time, though looping through the HashMap is time consuming. <br>
 
 
