@@ -8,7 +8,7 @@ public class Country{
     public String filenameMahesh;
 
     public Country(String colour){
-      filenameInbar = "/Users/inbarpeer/desktop/PEERfectMAHlariaMAHps/Map2/data/info.txt";
+      filenameInbar = "/Users/inbarpeer/desktop/PEERfectMAHlariaMAHps/Map/data/info.txt";
       filenameMahesh = "C:\\Users\\THOR\\Documents\\GitHub\\PEERfectMAHlariaMAHps\\Map\\data\\info.txt"; 
       color = colour;
       scanInfo();
@@ -58,6 +58,7 @@ public class Country{
   String line = "";
         String csvSplitBy = ",";
   String data = "Country Not Found";
+  
         try (BufferedReader br = new BufferedReader(new FileReader(filenameInbar))) {
       while ((line = br.readLine()) != null) {
     String[] country = line.split(csvSplitBy);
@@ -89,35 +90,59 @@ public class Country{
     
     }
     private int popVal(){
-  if(this.Population()> 50000){
-      return 6; //shade of red;
+  if(this.Population()> 50000 && this.Population() <= 100000){
+      return 10; //shade of red;
   }
-  if(this.Population()> 1000000){
-      return 5; //shade of red;
+  else if(this.Population()> 100000 && this.Population() <= 500000){
+      return 9; //shade of red;
   }
-  if(this.Population()> 5000000){
-      return 4; //shade of red;
+  else if(this.Population()> 500000 && this.Population() <= 1000000){
+      return 8; //shade of red;
   }
-  if(this.Population()> 10000000){
+  else if(this.Population()> 1000000 && this.Population() <= 3000000){
+      return 7;
+      //shade of red;
+  }
+  else if(this.Population()> 3000000 && this.Population() <= 5000000){
+      return 6;
+      //shade of red;
+  }
+  else if(this.Population()> 5000000 && this.Population() <= 10000000){
+      return 5;
+      //shade of red;
+  }
+  else if(this.Population()> 10000000 && this.Population() <= 15000000){
+      return 4;
+      //shade of red;
+  }
+  else if(this.Population()> 15000000 && this.Population() <= 20000000){
       return 3;
       //shade of red;
   }
-  if(this.Population()> 50000000){
+  else if(this.Population()> 20000000 && this.Population() <= 40000000){
       return 2;
       //shade of red;
   }
- else{
+  else if(this.Population()> 40000000 && this.Population() <= 75000000){
       return 1;
+      //shade of red;
+  }
+  else if(this.Population()> 75000000 && this.Population() <= 150000000){
+      return 11;
+      //shade of red;
+  }
+  else{
+      return 11;
       
   }
     }
     
     private int malVal(){
   if(this.MalariaDeath()> 60){
-      return 7; //shade of red;
+      return 9; //shade of red;
   }
   if(this.MalariaDeath()>50){
-      return 6; //shade of red;
+      return 8; //shade of red;
   }
   if(this.MalariaDeath()> 40){
       return 5; //shade of red;
@@ -142,10 +167,10 @@ public class Country{
     
     private int monVal(){
   if(this.GDP()> 100){
-      return 5;
+      return 8;
   }
   if(this.GDP()> 50){
-      return 4; //shade of red;
+      return 7; //shade of red;
   }
   if(this.GDP()>10){
       return 3; //shade of red;
@@ -163,19 +188,22 @@ public class Country{
     
     private int lifeVal(){
   if(this.LifeExpectancy() > 70){
-      return 5;
+      return 9;
   }
   else if(this.LifeExpectancy() > 65){
-      return 4;
+      return 8;
   }
   if(this.LifeExpectancy() > 60){
-      return 3;
+      return 4;
   }
   if(this.LifeExpectancy() > 55){
-      return 2;
+      return 3;
   }
   if(this.LifeExpectancy()> 50){
-      return 1 ;//shade of red;
+      return 2 ;//shade of red;
+  }
+  if(this.LifeExpectancy()>40){
+    return 1;
   }
         else{
       return 0;
