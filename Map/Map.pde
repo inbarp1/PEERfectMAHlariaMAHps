@@ -1,7 +1,7 @@
 
 PImage img;
 int rect1X, rect1Y, rect2X, rect2Y, rect3X, rect3Y,rect4X, rect4Y,rect5X, rect5Y;   
-int rectSize = 50; 
+int rectSize = 70; 
 boolean rect1Over = false;
 boolean rect2Over = false;
 boolean rect3Over = false;
@@ -33,8 +33,9 @@ void setup(){
   
 }
 void reload(){
-  background(0);
+  background(255);
  setup();
+ rect1Over = false;
 }
 void draw() { 
   update(mouseX, mouseY);
@@ -48,31 +49,33 @@ void draw() {
   color yellow = color(255,255,0);
   color blue = color(0,77,255);
   color green = color(131,235,111);
-  textSize(12);
+  textSize(16);
   stroke(255);
   fill(0); 
   rect(rect1X, rect1Y, rectSize, rectSize);
   fill(0, 102, 153);
-  text("Clear", rect1X+rectSize/4, rect1Y+rectSize/2);
+  text("Clear", rect1X+rectSize/6, rect1Y+rectSize/2);
   fill(0);
   rect(rect2X, rect2Y, rectSize, rectSize);
   fill(0, 102, 153);
-  textSize(8);
-  text("Population", rect2X, rect2Y+rectSize/2);
+  textSize(20);
+  text("Pop.", rect2X+6, rect2Y+rectSize/2);
   fill(0);
   rect(rect3X, rect3Y, rectSize, rectSize);
-  textSize(14);
+  textSize(16);
   fill(0, 102, 153);
-  text("Malaria", rect3X, rect3Y+rectSize/2);
+  text("Malaria", rect3X+2, rect3Y+rectSize/2);
   fill(0);
   rect(rect4X, rect4Y, rectSize, rectSize);
   fill(0, 102, 153);
   text("GDP", rect4X+rectSize/4, rect4Y+rectSize/2);
   fill(0);
-  textSize(8);
+  textSize(18);
   rect(rect5X, rect5Y, rectSize, rectSize);fill(0);
   fill(0, 102, 153);
-  text("Life Expectancy", rect5X, rect5Y+rectSize/2);
+  text("Life", rect5X+15, rect5Y+rectSize/2);
+  textSize(12);
+  text("Expectancy", rect5X, rect5Y+rectSize/2 + 14);
  
   
  
@@ -85,22 +88,31 @@ void mouseClicked() {
    reload();
    println("reloaded");
   }  
-  if(rect2Over){
+  else if(rect2Over){
+    println("pop");
     changeColors(2);
+    rect2Over = false;
   }
-  if(rect3Over){
+  else if(rect3Over){
+    println("malaria");
     changeColors(3);
+    rect3Over = false;
   }
-  if(rect4Over){
+  else if(rect4Over){
+    println("gdp");
     changeColors(4);
+    rect4Over = false;
   }
-  if(rect5Over){
+  else if(rect5Over){
+    println("life");
     changeColors(5);
+    rect5Over = false;
   }
   
 }
   
 void changeColors(int n){
+  reload();
   loadPixels();
   String[] x = new String[53];
   //println(hex(get(tempX,tempY)));
@@ -126,8 +138,8 @@ void changeColors(int n){
          //println(pixels[k]);
        //set(tempX,tempY,unhex(next));
     }
-    println("done");
-   updatePixels();
+    //println("done");
+    updatePixels();
 
     }
   }
@@ -176,18 +188,39 @@ color toRGB(int i){
 void update(int x, int y) {
   if ( overRect(rect1X, rect1Y, rectSize, rectSize) ) {
     rect1Over = true;
+    rect2Over = false;
+    rect3Over = false;
+    rect4Over = false;
+    rect5Over = false;
   }
   if ( overRect(rect2X, rect2Y, rectSize, rectSize) ) {
     rect2Over = true;
+    rect1Over = false;
+    rect3Over = false;
+    rect4Over = false;
+    rect5Over = false;
   }
    if ( overRect(rect3X, rect3Y, rectSize, rectSize) ) {
     rect3Over = true;
+    rect2Over = false;
+    rect1Over = false;
+    rect4Over = false;
+    rect5Over = false;
   }
   if ( overRect(rect4X, rect4Y, rectSize, rectSize) ) {
     rect4Over = true;
+    rect2Over = false;
+    rect3Over = false;
+    rect1Over = false;
+    rect5Over = false;
   }
+  
   if ( overRect(rect5X, rect5Y, rectSize, rectSize) ) {
     rect5Over = true;
+    rect2Over = false;
+    rect3Over = false;
+    rect4Over = false;
+    rect1Over = false;
   }
 }
 boolean overRect(int x, int y, int width, int height)  {
