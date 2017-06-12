@@ -118,17 +118,18 @@ void changeColors(int n){
     //x[i] = ("FF" + country.colorVal(2).substring(3));
  // }
   //println(x);
-  println(countries);
+  //println(countries);
   for(int j= 0; j<countries.size(); j++){
     
     Country country = countries.get(j);
-      println(country.getColor());
+      //println(country.getColor());
     //println(country.calcValue(0));
     //if(((""+hex(get(tempX,tempY))).substring(2)).equals(country.getColor())){
        for(int k = 0; k < width*height; k ++)
        if((""+hex(pixels[k])).substring(2).equals(country.getColor())){
          //println(pixels[k]);
          //println(country.colorVal(3));
+         println(country.colorVal(n));
          pixels[k] = toRGB(country.colorVal(n));
          //println(country.colorVal(3));
          //println("changed pixels");
@@ -150,36 +151,51 @@ color toRGB(int i){
      return c;
   }
   if(i==1){
-     c= color(246, 189,189);
+     c= color(229, 0, 78);
      return c;
   }
   if(i==2){
-     c = color(246,75,75);
+     c = color(213, 1, 71);
      return c;
   }
   if(i==3){
-     c = color(255, 0, 0);
+     c = color(198, 3, 64);
      return c;
   }
   if(i==4){
-     c= color(178, 9,9);
+     c= color(182, 5,57);
      return c;
   }
   if(i==5){
-     c = color(119,15,15);
+     c = color(167,6,51);
      return c;
   }
   if(i==6){
-     c= color(73, 0,0);
+     c= color(152,8,44);
      return c;
   }
   if(i==7){
-     c = color(53,0,0);
+     c = color(136,10,37);
      return c;
   }
-  else{
-  c = color(28,0,0);
+  if(i==8){
+  c = color(121,11,31);
   return c;
+  }
+  if(i==9){
+  c = color(105,13,24);
+  return c;
+  }
+  if(i==10){
+  c = color(90,15,17);
+  return c;
+  }
+  if(i==11){
+  c = color(75,17,11);
+  return c;
+  }
+  else{
+    return color(255,255,255);
   }
 } 
 void update(int x, int y) {

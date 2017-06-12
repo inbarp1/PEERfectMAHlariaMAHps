@@ -90,24 +90,49 @@ public class Country{
     
     }
     private int popVal(){
-  if(this.Population()> 50000){
-      return 6; //shade of red;
+  if(this.Population()> 50000 && this.Population() <= 100000){
+      return 10; //shade of red;
   }
-  if(this.Population()> 1000000){
-      return 5; //shade of red;
+  else if(this.Population()> 100000 && this.Population() <= 500000){
+      return 9; //shade of red;
   }
-  if(this.Population()> 5000000){
-      return 4; //shade of red;
+  else if(this.Population()> 500000 && this.Population() <= 1000000){
+      return 8; //shade of red;
   }
-  if(this.Population()> 10000000){
+  else if(this.Population()> 1000000 && this.Population() <= 3000000){
+      return 7;
+      //shade of red;
+  }
+  else if(this.Population()> 3000000 && this.Population() <= 5000000){
+      return 6;
+      //shade of red;
+  }
+  else if(this.Population()> 5000000 && this.Population() <= 10000000){
+      return 5;
+      //shade of red;
+  }
+  else if(this.Population()> 10000000 && this.Population() <= 15000000){
+      return 4;
+      //shade of red;
+  }
+  else if(this.Population()> 15000000 && this.Population() <= 20000000){
       return 3;
       //shade of red;
   }
-  if(this.Population()> 50000000){
+  else if(this.Population()> 20000000 && this.Population() <= 40000000){
       return 2;
       //shade of red;
-        else{
+  }
+  else if(this.Population()> 40000000 && this.Population() <= 75000000){
       return 1;
+      //shade of red;
+  }
+  else if(this.Population()> 75000000 && this.Population() <= 150000000){
+      return 11;
+      //shade of red;
+  }
+  else{
+      return 11;
       
   }
     }
