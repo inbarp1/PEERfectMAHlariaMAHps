@@ -8,7 +8,7 @@ public class Country{
     public String filenameMahesh;
 
     public Country(String colour){
-      filenameInbar = "/Users/inbarpeer/desktop/PEERfectMAHlariaMAHps/Map/data/info.txt";
+      filenameInbar = "/Users/inbarpeer/desktop/PEERfectMAHlariaMAHps/Map2/data/info.txt";
       filenameMahesh = "C:\\Users\\THOR\\Documents\\GitHub\\PEERfectMAHlariaMAHps\\Map\\data\\info.txt"; 
       color = colour;
       scanInfo();
@@ -58,8 +58,7 @@ public class Country{
   String line = "";
         String csvSplitBy = ",";
   String data = "Country Not Found";
-  
-        try (BufferedReader br = new BufferedReader(new FileReader(filenameMahesh))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filenameInbar))) {
       while ((line = br.readLine()) != null) {
     String[] country = line.split(csvSplitBy);
     if(country[1].equals(""+color)){

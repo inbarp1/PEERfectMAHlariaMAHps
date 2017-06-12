@@ -1,5 +1,6 @@
 
 PImage img;
+//PWindow win;
 int rect1X, rect1Y, rect2X, rect2Y, rect3X, rect3Y,rect4X, rect4Y,rect5X, rect5Y;   
 int rectSize = 70; 
 boolean rect1Over = false;
