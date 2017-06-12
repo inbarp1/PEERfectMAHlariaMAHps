@@ -32,12 +32,57 @@ void setup(){
   //println(countries); 
   
 }
+void reload(){
+  background(0);
+ setup();
+}
+void draw() { 
+  update(mouseX, mouseY);
+  if (rect1Over) {
+    fill(rectHighlight);
+  } else {
+    fill(rectColor);
+  }
+  color pink = color(255,38,191);
+  color purple = color(192,16,246);
+  color yellow = color(255,255,0);
+  color blue = color(0,77,255);
+  color green = color(131,235,111);
+  textSize(12);
+  stroke(255);
+  fill(pink); 
+  rect(rect1X, rect1Y, rectSize, rectSize);
+  fill(0);
+  text("Clear", rect1X+rectSize/4, rect1Y+rectSize/2);
+  fill(green);
+  rect(rect2X, rect2Y, rectSize, rectSize);
+  fill(0);
+  textSize(8);
+  text("Population", rect2X, rect2Y+rectSize/2);
+  fill(purple);
+  rect(rect3X, rect3Y, rectSize, rectSize);
+  textSize(12);
+  fill(0);
+  text("Malaria", rect3X, rect3Y+rectSize/2);
+  fill(yellow);
+  rect(rect4X, rect4Y, rectSize, rectSize);
+  fill(0);
+  text("GDP", rect4X+rectSize/4, rect4Y+rectSize/2);
+  fill(blue);
+  textSize(8);
+  rect(rect5X, rect5Y, rectSize, rectSize);fill(0);
+  text("Life Expectancy", rect5X, rect5Y+rectSize/2);
+ 
+  
+ 
+}
 
 void mouseClicked() { 
-  println(mouseX);
-  println(mouseY);
+  //println(mouseX);
+  //println(mouseY);
   if(rect1Over){
-   setup();
+   reload();
+   println("reloaded");
   }  
   if(rect2Over){
     changeColors(2);
@@ -68,7 +113,7 @@ void changeColors(int n){
     //int tempY = mouseY;
     //println(countries);
     Country country = countries.get(j);
-    println(country.calcValue(0));
+    //println(country.calcValue(0));
     //if(((""+hex(get(tempX,tempY))).substring(2)).equals(country.getColor())){
        for(int k = 0; k < width*height; k ++)
        if((""+hex(pixels[k])).substring(2).equals(country.getColor())){
@@ -80,6 +125,7 @@ void changeColors(int n){
          //println(pixels[k]);
        //set(tempX,tempY,unhex(next));
     }
+    println("done");
    updatePixels();
 
     }
@@ -130,6 +176,18 @@ void update(int x, int y) {
   if ( overRect(rect1X, rect1Y, rectSize, rectSize) ) {
     rect1Over = true;
   }
+  if ( overRect(rect2X, rect2Y, rectSize, rectSize) ) {
+    rect2Over = true;
+  }
+   if ( overRect(rect3X, rect3Y, rectSize, rectSize) ) {
+    rect3Over = true;
+  }
+  if ( overRect(rect4X, rect4Y, rectSize, rectSize) ) {
+    rect4Over = true;
+  }
+  if ( overRect(rect5X, rect5Y, rectSize, rectSize) ) {
+    rect5Over = true;
+  }
 }
 boolean overRect(int x, int y, int width, int height)  {
   if (mouseX >= x && mouseX <= x+width && 
@@ -138,20 +196,4 @@ boolean overRect(int x, int y, int width, int height)  {
   } else {
     return false;
   }
-}
-void draw() { 
-  update(mouseX, mouseY);
-  if (rect1Over) {
-    fill(rectHighlight);
-  } else {
-    fill(rectColor);
-  }
-  stroke(255);
-  rect(rect1X, rect1Y, rectSize, rectSize);
-  rect(rect2X, rect2Y, rectSize, rectSize);
-  rect(rect3X, rect3Y, rectSize, rectSize);
-  rect(rect4X, rect4Y, rectSize, rectSize);
-  rect(rect5X, rect5Y, rectSize, rectSize);
-  textSize(12);
-  fill(119,15,15);
 }
