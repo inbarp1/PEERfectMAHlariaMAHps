@@ -112,31 +112,18 @@ void mouseClicked() {
 void changeColors(int n){
   reload();
   loadPixels();
-  //println(hex(get(tempX,tempY)));
-  //for(int i= 0; i<countries.size(); i++){
-   // Country country = countries.get(i);
-    //x[i] = ("FF" + country.colorVal(2).substring(3));
- // }
-  //println(x);
-  //println(countries);
+  
   for(int j= 0; j<countries.size(); j++){
     
     Country country = countries.get(j);
-      //println(country.getColor());
-    //println(country.calcValue(0));
-    //if(((""+hex(get(tempX,tempY))).substring(2)).equals(country.getColor())){
+     
        for(int k = 0; k < width*height; k ++)
        if((""+hex(pixels[k])).substring(2).equals(country.getColor())){
-         //println(pixels[k]);
-         //println(country.colorVal(3));
-         //println(country.colorVal(n));
+        
          pixels[k] = toRGB(country.colorVal(n));
-         //println(country.colorVal(3));
-         //println("changed pixels");
-         //println(pixels[k]);
-       //set(tempX,tempY,unhex(next));
+        
     }
-    //println("done");
+
     updatePixels();
 
     }
